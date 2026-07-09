@@ -249,7 +249,7 @@ async function apiFetch(url) {
 async function fetchWeather(city) {
   showLoading();
   try {
-    const data = await apiFetch( `http://localhost:8080/weather?city=${encodeURIComponent(city)}`);
+    const data = await apiFetch( `/weather?city=${city}`);
     renderWeather(data);
     fetchForecastAndRender(city);
     addToHistory(city);
